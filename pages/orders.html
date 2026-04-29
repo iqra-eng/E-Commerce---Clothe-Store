@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View your complete LUXE order history — track, return or reorder past purchases." />
+  <title>My Orders — LUXE</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">LUXE</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <div style="margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid var(--border-muted-color);display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div>
+        <h4>Account</h4>
+        <h1 style="font-size:2rem;margin-top:4px;">My Orders</h1>
+      </div>
+      <a href="dashboard.html" class="link-button">← Back to Dashboard</a>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px;">
+      <div class="select-container" style="min-width:160px;">
+        <select id="status-filter" onchange="filterOrders()">
+          <option value="">All Statuses</option>
+          <option value="Processing">Processing</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Returned">Returned</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+      <div class="select-container" style="min-width:160px;">
+        <select id="period-filter">
+          <option>Last 3 months</option>
+          <option>Last 6 months</option>
+          <option>This Year</option>
+          <option>All Time</option>
+        </select>
+      </div>
+      <input type="text" id="order-search" placeholder="Search order ID or product…" style="max-width:260px;" oninput="filterOrders()" />
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <div class="table-container">
+      <table style="min-width:700px;max-width:100%;">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Products</th>
+            <th>Total</th>
+            <th>Payment</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="orders-body">
+          <tr data-status="Processing">
+            <td><strong>#LX-00241</strong></td>
+            <td>28 Apr 2026</td>
+            <td style="white-space:normal;max-width:200px;">Linen Blazer, Silk Scarf</td>
+            <td>PKR 12,400</td>
+            <td>Card</td>
+            <td><span class="badge badge-warning">Processing</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Order details opened')">Details</button>
+              <button class="tiny-button border-button" onclick="showToast('Order cancellation requested','error')">Cancel</button>
+            </td>
+          </tr>
+          <tr data-status="Shipped">
+            <td><strong>#LX-00238</strong></td>
+            <td>21 Apr 2026</td>
+            <td style="white-space:normal;max-width:200px;">Wool Blend Overcoat</td>
+            <td>PKR 14,200</td>
+            <td>COD</td>
+            <td><span class="badge badge-info">Shipped</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Tracking info opened')">Track</button>
+              <button class="tiny-button border-button" onclick="showToast('Support ticket created')">Support</button>
+            </td>
+          </tr>
+          <tr data-status="Delivered">
+            <td><strong>#LX-00229</strong></td>
+            <td>14 Apr 2026</td>
+            <td style="white-space:normal;max-width:200px;">Silk Wrap Dress, Trousers</td>
+            <td>PKR 19,700</td>
+            <td>Card</td>
+            <td><span class="badge badge-success">Delivered</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Leave a review')">Review</button>
+              <button class="tiny-button border-button" onclick="showToast('Reorder placed!')">Reorder</button>
+            </td>
+          </tr>
+          <tr data-status="Delivered">
+            <td><strong>#LX-00215</strong></td>
+            <td>02 Apr 2026</td>
+            <td style="white-space:normal;max-width:200px;">Slim Tapered Chinos</td>
+            <td>PKR 6,800</td>
+            <td>Card</td>
+            <td><span class="badge badge-success">Delivered</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Review submitted!')">Review</button>
+              <button class="tiny-button border-button" onclick="showToast('Reorder placed!')">Reorder</button>
+            </td>
+          </tr>
+          <tr data-status="Returned">
+            <td><strong>#LX-00199</strong></td>
+            <td>18 Mar 2026</td>
+            <td style="white-space:normal;max-width:200px;">Cashmere Turtleneck</td>
+            <td>PKR 9,500</td>
+            <td>Card</td>
+            <td><span class="badge badge-danger">Returned</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Refund status: Processed')">Refund</button>
+            </td>
+          </tr>
+          <tr data-status="Delivered">
+            <td><strong>#LX-00187</strong></td>
+            <td>05 Mar 2026</td>
+            <td style="white-space:normal;max-width:200px;">Oxford Shirt × 2, Belt</td>
+            <td>PKR 18,300</td>
+            <td>COD</td>
+            <td><span class="badge badge-success">Delivered</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button" onclick="showToast('Review submitted!')">Review</button>
+              <button class="tiny-button border-button" onclick="showToast('Reorder placed!')">Reorder</button>
+            </td>
+          </tr>
+          <tr data-status="Cancelled">
+            <td><strong>#LX-00172</strong></td>
+            <td>18 Feb 2026</td>
+            <td style="white-space:normal;max-width:200px;">Leather Biker Jacket</td>
+            <td>PKR 18,500</td>
+            <td>Card</td>
+            <td><span class="badge badge-muted">Cancelled</span></td>
+            <td style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="tiny-button border-button" onclick="showToast('Reorder placed!')">Reorder</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PAGINATION -->
+    <div style="display:flex;justify-content:center;gap:8px;margin-top:28px;flex-wrap:wrap;">
+      <button class="border-button tiny-button" style="background:var(--brand-primary-color);color:#fff;border-color:var(--brand-primary-color);">1</button>
+      <button class="border-button tiny-button">2</button>
+      <button class="border-button tiny-button">3</button>
+      <button class="border-button tiny-button">Next →</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>LUXE</h1><p>Premium fashion for the modern wardrobe.</p></div>
+      <div><h2>Account</h2><a href="dashboard.html">Dashboard</a><a href="orders.html">My Orders</a><a href="cart.html">Cart</a></div>
+      <div><h2>Help</h2><a href="contact.html">Contact</a><a href="services.html">About</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 LUXE. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+  <script>
+    function filterOrders() {
+      const status = document.getElementById('status-filter').value.toLowerCase();
+      const search = document.getElementById('order-search').value.toLowerCase();
+      document.querySelectorAll('#orders-body tr').forEach(row => {
+        const rowStatus  = (row.dataset.status || '').toLowerCase();
+        const rowText    = row.textContent.toLowerCase();
+        const matchSt    = !status || rowStatus === status;
+        const matchSr    = !search || rowText.includes(search);
+        row.style.display = (matchSt && matchSr) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

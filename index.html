@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LUXE — Premium clothing store. Discover the latest collections in women's and men's fashion, curated for the modern wardrobe." />
+  <title>LUXE — Premium Fashion Store</title>
+  <link rel="stylesheet" href="cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <a href="index.html">LUXE</a>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="pages/products.html">Shop ▾</a>
+        <div class="dropdown-menu">
+          <a href="pages/products.html?cat=women">Women</a>
+          <a href="pages/products.html?cat=men">Men</a>
+          <a href="pages/products.html?cat=new">New Arrivals</a>
+          <a href="pages/products.html?cat=sale">Sale</a>
+        </div>
+      </li>
+      <li><a href="pages/services.html">About</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+      <li>
+        <a href="pages/cart.html" style="position:relative;">
+          🛍 Cart
+          <span id="cart-count" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span>
+        </a>
+      </li>
+      <li><a href="pages/login.html">Login</a></li>
+      <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <img src="sources/hero_banner.png" alt="LUXE Spring Collection" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h4 style="color:var(--brand-third-color);letter-spacing:0.3em;">SS 2026 COLLECTION</h4>
+      <h1>Wear the<br><em>Silence</em></h1>
+      <p>Minimalist essentials crafted for those who let their presence speak.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="pages/products.html"><button class="lg-button">Shop Women</button></a>
+        <a href="pages/products.html?cat=men"><button class="lg-button border-button" style="border-color:#fff;color:#fff;">Shop Men</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED COLLECTIONS ===== -->
+  <main class="page">
+
+    <div class="section-header">
+      <div>
+        <h4>Curated for You</h4>
+        <h2>Featured Collections</h2>
+      </div>
+      <a href="pages/products.html" class="link-button">View All →</a>
+    </div>
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="sources/collection_women.png" alt="Women's Collection" />
+        <div>
+          <h4>Women</h4>
+          <h3>Effortless Chic</h3>
+          <p>Tailored silhouettes and fluid fabrics for the modern woman.</p>
+          <a href="pages/products.html?cat=women">Shop Women →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="sources/collection_men.png" alt="Men's Collection" />
+        <div>
+          <h4>Men</h4>
+          <h3>Sharp Minimalism</h3>
+          <p>Refined cuts and premium textiles for understated confidence.</p>
+          <a href="pages/products.html?cat=men">Shop Men →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="sources/hero_banner.png" alt="New Arrivals" style="height:320px;object-fit:cover;" />
+        <div>
+          <h4>New In</h4>
+          <h3>Latest Arrivals</h3>
+          <p>Fresh styles added weekly — be the first to wear them.</p>
+          <a href="pages/products.html?cat=new">What's New →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== BANNER STRIP ===== -->
+    <div style="background:var(--brand-primary-color);color:#fff;display:flex;align-items:center;justify-content:center;gap:48px;padding:24px 40px;border-radius:var(--radius-md);margin:48px 0;flex-wrap:wrap;">
+      <span style="font-size:0.72rem;letter-spacing:0.2em;font-weight:600;">FREE SHIPPING OVER PKR 5,000</span>
+      <span style="color:var(--brand-third-color);">|</span>
+      <span style="font-size:0.72rem;letter-spacing:0.2em;font-weight:600;">EASY 30-DAY RETURNS</span>
+      <span style="color:var(--brand-third-color);">|</span>
+      <span style="font-size:0.72rem;letter-spacing:0.2em;font-weight:600;">AUTHENTIC QUALITY GUARANTEED</span>
+    </div>
+
+    <!-- ===== NEW ARRIVALS GRID ===== -->
+    <div class="section-header" style="margin-top:48px;">
+      <div>
+        <h4>Just Landed</h4>
+        <h2>New Arrivals</h2>
+      </div>
+      <a href="pages/products.html?cat=new" class="link-button">See All →</a>
+    </div>
+
+    <div class="card-container">
+      <div class="card" style="width:210px;">
+        <img src="sources/collection_women.png" alt="Linen Blazer" style="height:260px;object-fit:cover;" />
+        <div>
+          <h4>Women</h4>
+          <h3 style="font-size:0.85rem;">Linen Oversized Blazer</h3>
+          <p style="font-size:0.82rem;">PKR 8,500</p>
+          <a href="pages/product-detail.html">Quick View</a>
+        </div>
+      </div>
+      <div class="card" style="width:210px;">
+        <img src="sources/collection_men.png" alt="Wool Coat" style="height:260px;object-fit:cover;" />
+        <div>
+          <h4>Men</h4>
+          <h3 style="font-size:0.85rem;">Wool Blend Overcoat</h3>
+          <p style="font-size:0.82rem;">PKR 14,200</p>
+          <a href="pages/product-detail.html">Quick View</a>
+        </div>
+      </div>
+      <div class="card" style="width:210px;">
+        <img src="sources/hero_banner.png" alt="Silk Dress" style="height:260px;object-fit:cover;" />
+        <div>
+          <h4>Women</h4>
+          <h3 style="font-size:0.85rem;">Silk Wrap Midi Dress</h3>
+          <p style="font-size:0.82rem;">PKR 11,900</p>
+          <a href="pages/product-detail.html">Quick View</a>
+        </div>
+      </div>
+      <div class="card" style="width:210px;">
+        <img src="sources/collection_men.png" alt="Chinos" style="height:260px;object-fit:cover;" />
+        <div>
+          <h4>Men</h4>
+          <h3 style="font-size:0.85rem;">Slim Tapered Chinos</h3>
+          <p style="font-size:0.82rem;">PKR 6,800</p>
+          <a href="pages/product-detail.html">Quick View</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== WHY LUXE ===== -->
+    <div class="section-header" style="margin-top:64px;">
+      <div>
+        <h4>Our Promise</h4>
+        <h2>Why Choose LUXE</h2>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card" style="width:220px;text-align:center;">
+        <div style="padding:32px 24px;align-items:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">✦</div>
+          <h3>Premium Fabric</h3>
+          <p>Hand-selected natural and sustainable fabrics from global mills.</p>
+        </div>
+      </div>
+      <div class="card" style="width:220px;text-align:center;">
+        <div style="padding:32px 24px;align-items:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">↩</div>
+          <h3>Easy Returns</h3>
+          <p>Free 30-day returns with no questions asked, ever.</p>
+        </div>
+      </div>
+      <div class="card" style="width:220px;text-align:center;">
+        <div style="padding:32px 24px;align-items:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">⚡</div>
+          <h3>Fast Delivery</h3>
+          <p>Same-day dispatch for orders placed before 2pm.</p>
+        </div>
+      </div>
+      <div class="card" style="width:220px;text-align:center;">
+        <div style="padding:32px 24px;align-items:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">◎</div>
+          <h3>Authentic Quality</h3>
+          <p>Every piece is quality-checked before leaving our warehouse.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>LUXE</h1>
+        <p>Premium fashion for the modern wardrobe. Minimalist, sustainable, timeless.</p>
+      </div>
+      <div>
+        <h2>Shop</h2>
+        <a href="pages/products.html?cat=women">Women</a>
+        <a href="pages/products.html?cat=men">Men</a>
+        <a href="pages/products.html?cat=new">New Arrivals</a>
+        <a href="pages/products.html?cat=sale">Sale</a>
+      </div>
+      <div>
+        <h2>Account</h2>
+        <a href="pages/login.html">Login</a>
+        <a href="pages/signup.html">Sign Up</a>
+        <a href="pages/dashboard.html">Dashboard</a>
+        <a href="pages/orders.html">My Orders</a>
+      </div>
+      <div>
+        <h2>Help</h2>
+        <a href="pages/contact.html">Contact Us</a>
+        <a href="pages/services.html">About Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 LUXE. All rights reserved.</p>
+      <p>Made with ♥ in Pakistan</p>
+    </div>
+  </footer>
+
+  <script src="jsFile/jsFunctions.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your LUXE shopping cart — review items before checkout." />
+  <title>Shopping Cart — LUXE</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">LUXE</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html" style="color:var(--brand-third-color);">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <div style="margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid var(--border-muted-color);">
+      <h4>Review &amp; Checkout</h4>
+      <h1 style="font-size:2rem;margin-top:4px;">Shopping Cart</h1>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;">
+
+      <!-- CART TABLE -->
+      <div style="flex:2;min-width:280px;">
+        <div class="table-container">
+          <table style="min-width:500px;max-width:100%;">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-body">
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:12px;">
+                    <img src="../sources/collection_women.png" alt="Blazer" style="width:52px;height:52px;object-fit:cover;border-radius:var(--radius-sm);flex-shrink:0;" />
+                    <span style="white-space:normal;max-width:180px;">Linen Oversized Blazer</span>
+                  </div>
+                </td>
+                <td>M</td>
+                <td>PKR 8,500</td>
+                <td>
+                  <div class="qty-control" style="display:flex;align-items:center;border:1px solid var(--border-muted-color);border-radius:var(--radius-sm);overflow:hidden;width:fit-content;">
+                    <button class="qty-minus border-button" style="border:none;border-radius:0;padding:4px 10px;">−</button>
+                    <input class="qty-input" type="number" value="1" min="1" style="width:36px;border:none;border-left:1px solid var(--border-muted-color);border-right:1px solid var(--border-muted-color);text-align:center;border-radius:0;padding:4px 2px;" />
+                    <button class="qty-plus border-button" style="border:none;border-radius:0;padding:4px 10px;">+</button>
+                  </div>
+                </td>
+                <td>PKR 8,500</td>
+                <td><button class="tiny-button border-button" onclick="removeRow(this)" style="color:var(--text-muted-color);">✕</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:12px;">
+                    <img src="../sources/collection_men.png" alt="Overcoat" style="width:52px;height:52px;object-fit:cover;border-radius:var(--radius-sm);flex-shrink:0;" />
+                    <span style="white-space:normal;max-width:180px;">Wool Blend Overcoat</span>
+                  </div>
+                </td>
+                <td>L</td>
+                <td>PKR 14,200</td>
+                <td>
+                  <div class="qty-control" style="display:flex;align-items:center;border:1px solid var(--border-muted-color);border-radius:var(--radius-sm);overflow:hidden;width:fit-content;">
+                    <button class="qty-minus border-button" style="border:none;border-radius:0;padding:4px 10px;">−</button>
+                    <input class="qty-input" type="number" value="1" min="1" style="width:36px;border:none;border-left:1px solid var(--border-muted-color);border-right:1px solid var(--border-muted-color);text-align:center;border-radius:0;padding:4px 2px;" />
+                    <button class="qty-plus border-button" style="border:none;border-radius:0;padding:4px 10px;">+</button>
+                  </div>
+                </td>
+                <td>PKR 14,200</td>
+                <td><button class="tiny-button border-button" onclick="removeRow(this)" style="color:var(--text-muted-color);">✕</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:12px;">
+                    <img src="../sources/collection_women.png" alt="Dress" style="width:52px;height:52px;object-fit:cover;border-radius:var(--radius-sm);flex-shrink:0;" />
+                    <span style="white-space:normal;max-width:180px;">Silk Wrap Midi Dress</span>
+                  </div>
+                </td>
+                <td>S</td>
+                <td>PKR 11,900</td>
+                <td>
+                  <div class="qty-control" style="display:flex;align-items:center;border:1px solid var(--border-muted-color);border-radius:var(--radius-sm);overflow:hidden;width:fit-content;">
+                    <button class="qty-minus border-button" style="border:none;border-radius:0;padding:4px 10px;">−</button>
+                    <input class="qty-input" type="number" value="2" min="1" style="width:36px;border:none;border-left:1px solid var(--border-muted-color);border-right:1px solid var(--border-muted-color);text-align:center;border-radius:0;padding:4px 2px;" />
+                    <button class="qty-plus border-button" style="border:none;border-radius:0;padding:4px 10px;">+</button>
+                  </div>
+                </td>
+                <td>PKR 23,800</td>
+                <td><button class="tiny-button border-button" onclick="removeRow(this)" style="color:var(--text-muted-color);">✕</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:10px;">
+          <a href="products.html"><button class="border-button sm-button">← Continue Shopping</button></a>
+          <button class="border-button sm-button" onclick="showToast('Cart updated')">Update Cart</button>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <div style="flex:1;min-width:260px;background:var(--bg-card);border:1px solid var(--border-muted-color);border-radius:var(--radius-md);padding:28px 24px;display:flex;flex-direction:column;gap:16px;">
+        <h3>Order Summary</h3>
+        <div style="height:1px;background:var(--border-muted-color);"></div>
+
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted-color);">Subtotal (4 items)</span>
+            <span>PKR 46,200</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted-color);">Shipping</span>
+            <span style="color:#27ae60;">Free</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted-color);">Discount</span>
+            <span style="color:var(--brand-third-color);">– PKR 2,000</span>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--border-muted-color);"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h3>Total</h3>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;">PKR 44,200</span>
+        </div>
+
+        <!-- PROMO CODE -->
+        <div style="display:flex;gap:8px;">
+          <input type="text" id="promo-input" placeholder="Promo code" style="flex:1;" />
+          <button class="sm-button border-button" onclick="applyPromo()">Apply</button>
+        </div>
+
+        <button class="lg-button" style="width:100%;justify-content:center;" onclick="showToast('Proceeding to checkout…')">
+          Checkout →
+        </button>
+
+        <p style="font-size:0.75rem;text-align:center;color:var(--text-muted-color);">🔒 Secure checkout · Free returns</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>LUXE</h1><p>Premium fashion for the modern wardrobe.</p></div>
+      <div><h2>Shop</h2><a href="products.html?cat=women">Women</a><a href="products.html?cat=men">Men</a></div>
+      <div><h2>Help</h2><a href="contact.html">Contact</a><a href="services.html">About</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 LUXE. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+  <script>
+    function removeRow(btn) {
+      btn.closest('tr').style.opacity = '0';
+      btn.closest('tr').style.transition = 'opacity 0.3s';
+      setTimeout(() => btn.closest('tr').remove(), 300);
+      showToast('Item removed from cart');
+    }
+    function applyPromo() {
+      const code = document.getElementById('promo-input').value.trim().toUpperCase();
+      if (code === 'LUXE10') showToast('Promo code applied! 10% off.');
+      else showToast('Invalid promo code.', 'error');
+    }
+  </script>
+</body>
+</html>

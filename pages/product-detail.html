@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Linen Oversized Blazer — premium linen tailoring for the modern woman." />
+  <title>Linen Oversized Blazer — LUXE</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">LUXE</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="services.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <p style="font-size:0.75rem;color:var(--text-muted-color);margin-bottom:32px;letter-spacing:0.06em;">
+      <a href="../index.html" style="color:var(--text-muted-color);">Home</a> &nbsp;/&nbsp;
+      <a href="products.html" style="color:var(--text-muted-color);">Shop</a> &nbsp;/&nbsp;
+      <a href="products.html?cat=women" style="color:var(--text-muted-color);">Women</a> &nbsp;/&nbsp;
+      <span>Linen Oversized Blazer</span>
+    </p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+
+      <!-- IMAGES -->
+      <div style="flex:1;min-width:280px;max-width:520px;display:flex;flex-direction:column;gap:12px;">
+        <img src="../sources/collection_women.png" alt="Linen Oversized Blazer" id="main-image"
+             style="width:100%;height:520px;object-fit:cover;border-radius:var(--radius-md);" />
+        <div style="display:flex;gap:10px;">
+          <img src="../sources/collection_women.png" alt="View 1" onclick="switchImg('../sources/collection_women.png')"
+               style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;border:2px solid var(--brand-third-color);" />
+          <img src="../sources/hero_banner.png" alt="View 2" onclick="switchImg('../sources/hero_banner.png')"
+               style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;border:2px solid transparent;" />
+          <img src="../sources/collection_men.png" alt="View 3" onclick="switchImg('../sources/collection_men.png')"
+               style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;border:2px solid transparent;" />
+        </div>
+      </div>
+
+      <!-- DETAILS -->
+      <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:20px;">
+
+        <div>
+          <h4 style="color:var(--brand-third-color);margin-bottom:6px;">Women · New Arrival</h4>
+          <h1 style="font-size:2rem;margin-bottom:8px;">Linen Oversized Blazer</h1>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;">PKR 8,500</span>
+            <span class="badge badge-success">In Stock</span>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--border-muted-color);"></div>
+
+        <p>A relaxed, oversized blazer in 100% pure linen. Perfect for layering over tailored pieces or wearing as statement outerwear. Features single-button closure, patch pockets, and a fully lined interior.</p>
+
+        <!-- COLOR -->
+        <div>
+          <h4 style="margin-bottom:10px;">Colour: <span id="color-label" style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-primary-color);">Sand Beige</span></h4>
+          <div style="display:flex;gap:8px;">
+            <div onclick="pickColor(this,'Sand Beige')" title="Sand Beige" style="width:28px;height:28px;border-radius:50%;background:#e8dcc8;cursor:pointer;border:2px solid var(--brand-third-color);transition:border-color 0.2s;"></div>
+            <div onclick="pickColor(this,'Ivory White')" title="Ivory White" style="width:28px;height:28px;border-radius:50%;background:#f4f2ee;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;"></div>
+            <div onclick="pickColor(this,'Slate Grey')" title="Slate Grey" style="width:28px;height:28px;border-radius:50%;background:#6b6b6b;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;"></div>
+            <div onclick="pickColor(this,'Deep Black')" title="Deep Black" style="width:28px;height:28px;border-radius:50%;background:#1a1a1a;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;"></div>
+          </div>
+        </div>
+
+        <!-- SIZE -->
+        <div>
+          <h4 style="margin-bottom:10px;">Size: <span id="size-label" style="font-weight:400;text-transform:none;letter-spacing:0;">M</span></h4>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;" id="size-btns">
+            <button class="border-button tiny-button" onclick="pickSize(this,'XS')">XS</button>
+            <button class="border-button tiny-button" onclick="pickSize(this,'S')">S</button>
+            <button class="tiny-button" onclick="pickSize(this,'M')" style="background:var(--brand-primary-color);color:#fff;">M</button>
+            <button class="border-button tiny-button" onclick="pickSize(this,'L')">L</button>
+            <button class="border-button tiny-button" onclick="pickSize(this,'XL')">XL</button>
+            <button class="border-button tiny-button" style="opacity:0.4;cursor:not-allowed;" disabled>XXL</button>
+          </div>
+          <p style="font-size:0.78rem;margin-top:8px;"><a href="#" style="color:var(--brand-third-color);border-bottom:1px solid var(--brand-third-color);">Size Guide ↗</a></p>
+        </div>
+
+        <!-- QUANTITY -->
+        <div>
+          <h4 style="margin-bottom:10px;">Quantity</h4>
+          <div class="qty-control" style="display:flex;align-items:center;width:fit-content;border:1px solid var(--border-secondary-color);border-radius:var(--radius-sm);overflow:hidden;">
+            <button class="qty-minus border-button" style="border:none;border-radius:0;padding:8px 16px;font-size:1rem;">−</button>
+            <input class="qty-input" type="number" value="1" min="1"
+                   style="width:52px;border:none;border-left:1px solid var(--border-muted-color);border-right:1px solid var(--border-muted-color);text-align:center;border-radius:0;padding:8px 4px;" />
+            <button class="qty-plus border-button" style="border:none;border-radius:0;padding:8px 16px;font-size:1rem;">+</button>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="lg-button" style="flex:1;justify-content:center;" onclick="handleAddToCart()">Add to Cart 🛍</button>
+          <button class="lg-button border-button" onclick="showToast('Added to wishlist ♥')">♥</button>
+        </div>
+
+        <!-- DETAILS CARD -->
+        <div style="background:var(--bg-card);border:1px solid var(--border-muted-color);border-radius:var(--radius-md);padding:20px 24px;">
+          <h4 style="margin-bottom:12px;">Product Details</h4>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <p style="font-size:0.82rem;">✓ &nbsp;100% Pure Linen</p>
+            <p style="font-size:0.82rem;">✓ &nbsp;Fully lined interior</p>
+            <p style="font-size:0.82rem;">✓ &nbsp;Single-button closure with patch pockets</p>
+            <p style="font-size:0.82rem;">✓ &nbsp;Dry clean recommended</p>
+            <p style="font-size:0.82rem;">✓ &nbsp;Made in Portugal</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RELATED -->
+    <div class="section-header" style="margin-top:64px;">
+      <div><h4>You May Also Like</h4><h2>Related Products</h2></div>
+      <a href="products.html" class="link-button">View All →</a>
+    </div>
+    <div class="card-container">
+      <div class="card" style="width:210px;">
+        <img src="../sources/collection_women.png" alt="Silk Wrap Dress" style="height:260px;object-fit:cover;" />
+        <div><h4>Women</h4><h3 style="font-size:0.85rem;">Silk Wrap Midi Dress</h3><p style="font-size:0.82rem;">PKR 11,900</p><a href="product-detail.html">View</a></div>
+      </div>
+      <div class="card" style="width:210px;">
+        <img src="../sources/hero_banner.png" alt="Linen Trousers" style="height:260px;object-fit:cover;" />
+        <div><h4>Women</h4><h3 style="font-size:0.85rem;">Linen Wide Trousers</h3><p style="font-size:0.82rem;">PKR 4,800</p><a href="product-detail.html">View</a></div>
+      </div>
+      <div class="card" style="width:210px;">
+        <img src="../sources/collection_women.png" alt="Cashmere" style="height:260px;object-fit:cover;" />
+        <div><h4>Women</h4><h3 style="font-size:0.85rem;">Cashmere Turtleneck</h3><p style="font-size:0.82rem;">PKR 5,200</p><a href="product-detail.html">View</a></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>LUXE</h1><p>Premium fashion for the modern wardrobe.</p></div>
+      <div><h2>Shop</h2><a href="products.html?cat=women">Women</a><a href="products.html?cat=men">Men</a></div>
+      <div><h2>Help</h2><a href="contact.html">Contact</a><a href="services.html">About</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 LUXE. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+  <script>
+    let selSize = 'M', selColor = 'Sand Beige';
+
+    function switchImg(src) { document.getElementById('main-image').src = src; }
+
+    function pickSize(btn, size) {
+      selSize = size;
+      document.getElementById('size-label').textContent = size;
+      document.querySelectorAll('#size-btns button:not([disabled])').forEach(b => {
+        b.style.background = ''; b.style.color = '';
+      });
+      btn.style.background = 'var(--brand-primary-color)';
+      btn.style.color = '#fff';
+    }
+
+    function pickColor(el, color) {
+      selColor = color;
+      document.getElementById('color-label').textContent = color;
+      document.querySelectorAll('[onclick^="pickColor"]').forEach(d => d.style.borderColor = 'transparent');
+      el.style.borderColor = 'var(--brand-third-color)';
+    }
+
+    function handleAddToCart() {
+      const qty = parseInt(document.querySelector('.qty-input').value, 10) || 1;
+      addToCart({ id: 'p1', name: 'Linen Oversized Blazer', price: 8500, size: selSize, color: selColor, qty });
+    }
+  </script>
+</body>
+</html>

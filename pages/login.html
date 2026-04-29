@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to your LUXE account to access your orders, wishlist and profile." />
+  <title>Login — LUXE</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html">LUXE</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="services.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+
+    <div class="form-container">
+
+      <div style="text-align:center;margin-bottom:32px;">
+        <h4 style="margin-bottom:6px;">Welcome Back</h4>
+        <h2>Sign In to LUXE</h2>
+        <p style="margin-top:8px;font-size:0.85rem;">Don't have an account? <a href="signup.html" style="color:var(--brand-third-color);font-weight:600;border-bottom:1px solid var(--brand-third-color);">Create one</a></p>
+      </div>
+
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div>
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+          <label style="display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:0.82rem;cursor:pointer;">
+            <input type="checkbox" id="remember-me" style="width:auto;" />
+            Remember me
+          </label>
+          <a href="#" style="font-size:0.78rem;color:var(--brand-third-color);border-bottom:1px solid var(--brand-third-color);">Forgot password?</a>
+        </div>
+
+        <button type="submit" style="width:100%;" class="lg-button">Sign In</button>
+      </form>
+
+      <div style="text-align:center;margin-top:24px;display:flex;align-items:center;gap:12px;">
+        <div style="flex:1;height:1px;background:var(--border-muted-color);"></div>
+        <span style="font-size:0.72rem;color:var(--text-muted-color);letter-spacing:0.1em;">OR</span>
+        <div style="flex:1;height:1px;background:var(--border-muted-color);"></div>
+      </div>
+
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <button class="border-button" style="width:100%;justify-content:center;" onclick="showToast('Google login coming soon')">
+          <span>G</span> Continue with Google
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom" style="border-top:1px solid rgba(245,245,240,0.12);padding-top:24px;max-width:1280px;margin:0 auto;">
+      <p>© 2026 LUXE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      if (!validateRequired('login-form')) return;
+      showToast('Logging you in…');
+      setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
+    }
+  </script>
+</body>
+</html>
