@@ -910,3 +910,154 @@ footer h3 {
   .stat-card { min-width: 140px; }
   .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+/* ===== INLINE CSS REPLACEMENT ===== */
+
+.relative { position: relative; }
+
+.cart-badge {
+  display: none;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: var(--brand-third-color);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gold-text {
+  color: var(--brand-third-color);
+  letter-spacing: 0.3em;
+}
+
+.flex-center {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img-cover {
+  height: 260px;
+  object-fit: cover;
+}
+
+.img-large {
+  height: 320px;
+  object-fit: cover;
+}
+
+.small-card { width: 210px; }
+.medium-card { width: 220px; }
+
+.center { text-align: center; }
+
+.banner {
+  background: var(--brand-primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 24px 40px;
+  border-radius: var(--radius-md);
+  margin: 48px 0;
+  flex-wrap: wrap;
+}
+
+.white-btn {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+.nav-open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 5px);
+}
+.nav-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px);
+}
+
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.toast.show { opacity: 1; }
+
+.error-field {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.15);
+}
+
+/* =========================================================
+   HOME — BANNER STRIP
+========================================================= */
+.banner-strip {
+  background: var(--brand-primary-color);
+  color: var(--brand-secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.banner-strip span {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.banner-strip .sep {
+  color: var(--brand-third-color);
+}
+
+/* =========================================================
+   HOME — SECTION HEADER SPACING MODIFIERS
+========================================================= */
+.mt-48 { margin-top: 48px; }
+.mt-64 { margin-top: 64px; }
+
+/* =========================================================
+   HOME — SMALL CARD OVERRIDES (New Arrivals)
+========================================================= */
+.center-text { text-align: center; }
+
+.small-card img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.small-card h3 { font-size: 0.85rem; }
+.small-card p  { font-size: 0.82rem; }
+
+/* =========================================================
+   HOME — FEATURE CARDS (Why LUXE)
+========================================================= */
+.card > .feature-body {
+  padding: 32px 24px;
+  align-items: center;
+}
+
+.icon-big {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}

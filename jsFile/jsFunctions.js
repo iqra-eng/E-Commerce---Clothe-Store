@@ -16,8 +16,8 @@ function initNavToggle() {
     toggle.setAttribute('aria-expanded', isOpen);
     toggle.querySelectorAll('span').forEach((s, i) => {
       if (isOpen) {
-        if (i === 0) s.style.transform = 'rotate(45deg) translate(4px, 5px)';
-        if (i === 1) s.style.opacity = '0';
+        if (i === 0) toggle.classList.toggle('nav-open');
+        if (i === 1) toast.classList.add('show');
         if (i === 2) s.style.transform = 'rotate(-45deg) translate(4px, -5px)';
       } else {
         s.style.transform = '';
