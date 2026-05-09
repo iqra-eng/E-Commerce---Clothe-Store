@@ -19,7 +19,7 @@
       <li><a href="../index.html">Home</a></li>
       <li><a href="products.html">Shop</a></li>
       <li><a href="orders.html">My Orders</a></li>
-      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" class="cart-badge">0</span></a></li>
       <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
       <li><button class="sm-button border-button" onclick="showToast('Logged out')">Logout</button></li>
     </ul>
@@ -28,11 +28,11 @@
   <main class="page">
 
     <!-- WELCOME BAR -->
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--border-muted-color);">
+    <div class="welcome-bar">
       <div>
         <h4>Welcome back</h4>
-        <h1 style="font-size:2rem;">Iqra Ahmed</h1>
-        <p style="font-size:0.82rem;margin-top:4px;">Member since January 2025 &nbsp;·&nbsp; <span style="color:var(--brand-third-color);">Gold Member</span></p>
+        <h1>Iqra Ahmed</h1>
+        <p class="member-note">Member since January 2025 &nbsp;·&nbsp; <span class="gold">Gold Member</span></p>
       </div>
       <a href="#profile-section"><button class="border-button sm-button">Edit Profile</button></a>
     </div>
@@ -53,7 +53,7 @@
       </div>
       <div class="stat-card">
         <span>Total Spent</span>
-        <span style="font-size:1.6rem;">PKR 184K</span>
+        <span class="stat-value-lg">PKR 184K</span>
       </div>
       <div class="stat-card">
         <span>Wishlist Items</span>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="table-container">
-      <table style="min-width:600px;max-width:100%;">
+      <table class="dashboard-table">
         <thead>
           <tr>
             <th>Order ID</th>
@@ -128,16 +128,16 @@
     </div>
 
     <!-- PROFILE SECTION -->
-    <div id="profile-section" class="section-header" style="margin-top:64px;">
+    <div id="profile-section" class="section-header profile-section-header">
       <div>
         <h4>Account</h4>
         <h2>Profile Settings</h2>
       </div>
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:24px;">
-      <div class="form-container" style="margin:0;flex:1;min-width:280px;max-width:480px;">
-        <h3 style="margin-bottom:20px;">Personal Info</h3>
+    <div class="profile-forms">
+      <div class="form-container profile-form-card">
+        <h3 class="profile-form-title">Personal Info</h3>
         <form id="profile-form" onsubmit="saveProfile(event)">
           <div>
             <label for="p-fname">First Name</label>
@@ -155,12 +155,12 @@
             <label for="p-phone">Phone</label>
             <input type="tel" id="p-phone" value="+92 300 1234567" />
           </div>
-          <button type="submit" class="sm-button" style="margin-top:8px;">Save Changes</button>
+          <button type="submit" class="sm-button btn-save">Save Changes</button>
         </form>
       </div>
 
-      <div class="form-container" style="margin:0;flex:1;min-width:280px;max-width:480px;">
-        <h3 style="margin-bottom:20px;">Shipping Address</h3>
+      <div class="form-container profile-form-card">
+        <h3 class="profile-form-title">Shipping Address</h3>
         <form id="address-form" onsubmit="saveProfile(event)">
           <div>
             <label for="addr-line">Street Address</label>
@@ -170,8 +170,8 @@
             <label for="addr-city">City</label>
             <input type="text" id="addr-city" placeholder="Karachi" />
           </div>
-          <div style="display:flex;gap:14px;">
-            <div style="flex:1;">
+          <div class="addr-row">
+            <div class="addr-col">
               <label for="addr-province">Province</label>
               <div class="select-container">
                 <select id="addr-province">
@@ -182,12 +182,12 @@
                 </select>
               </div>
             </div>
-            <div style="flex:1;">
+            <div class="addr-col">
               <label for="addr-zip">Postal Code</label>
               <input type="text" id="addr-zip" placeholder="75500" />
             </div>
           </div>
-          <button type="submit" class="sm-button" style="margin-top:8px;">Save Address</button>
+          <button type="submit" class="sm-button btn-save">Save Address</button>
         </form>
       </div>
     </div>

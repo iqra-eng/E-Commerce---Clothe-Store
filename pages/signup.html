@@ -20,30 +20,30 @@
       <li><a href="products.html">Shop</a></li>
       <li><a href="services.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" class="cart-badge">0</span></a></li>
       <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
     </ul>
   </nav>
 
   <!-- PAGE -->
-  <div class="page" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+  <div class="page auth-page">
 
-    <div class="form-container" style="max-width:520px;">
+    <div class="form-container signup-form-container">
 
-      <div style="text-align:center;margin-bottom:32px;">
-        <h4 style="margin-bottom:6px;">Join LUXE</h4>
+      <div class="form-header">
+        <h4>Join LUXE</h4>
         <h2>Create Your Account</h2>
-        <p style="margin-top:8px;font-size:0.85rem;">Already have an account? <a href="login.html" style="color:var(--brand-third-color);font-weight:600;border-bottom:1px solid var(--brand-third-color);">Sign in</a></p>
+        <p>Already have an account? <a href="login.html" class="auth-link">Sign in</a></p>
       </div>
 
       <form id="signup-form" onsubmit="handleSignup(event)">
 
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:160px;">
+        <div class="form-row">
+          <div class="form-row-col">
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="firstName" placeholder="Iqra" required />
           </div>
-          <div style="flex:1;min-width:160px;">
+          <div class="form-row-col">
             <label for="last-name">Last Name</label>
             <input type="text" id="last-name" name="lastName" placeholder="Ahmed" required />
           </div>
@@ -69,14 +69,14 @@
           <input type="password" id="signup-confirm" name="confirm" placeholder="Re-enter your password" required />
         </div>
 
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;">
-          <input type="checkbox" id="agree-terms" style="width:auto;margin-top:2px;" required />
-          <label for="agree-terms" style="text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:400;color:var(--text-secondary-color);cursor:pointer;">
-            I agree to the <a href="#" style="color:var(--brand-third-color);border-bottom:1px solid var(--brand-third-color);">Terms of Service</a> and <a href="#" style="color:var(--brand-third-color);border-bottom:1px solid var(--brand-third-color);">Privacy Policy</a>
+        <div class="terms-row">
+          <input type="checkbox" id="agree-terms" class="checkbox-auto" required />
+          <label for="agree-terms" class="terms-label">
+            I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
           </label>
         </div>
 
-        <button type="submit" style="width:100%;" class="lg-button">Create Account</button>
+        <button type="submit" class="lg-button btn-full">Create Account</button>
       </form>
 
     </div>
@@ -84,7 +84,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-bottom" style="border-top:1px solid rgba(245,245,240,0.12);padding-top:24px;max-width:1280px;margin:0 auto;">
+    <div class="footer-bottom footer-minimal">
       <p>© 2026 LUXE. All rights reserved.</p>
     </div>
   </footer>

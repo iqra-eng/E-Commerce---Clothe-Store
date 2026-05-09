@@ -18,35 +18,35 @@
       <li><a href="../index.html">Home</a></li>
       <li><a href="products.html">Shop</a></li>
       <li><a href="services.html">About</a></li>
-      <li><a href="contact.html" style="color:var(--brand-third-color);">Contact</a></li>
-      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="contact.html" class="nav-active">Contact</a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" class="cart-badge">0</span></a></li>
       <li><a href="login.html">Login</a></li>
       <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
     </ul>
   </nav>
 
   <!-- PAGE HEADER -->
-  <div style="background:var(--brand-secondary-color);padding:64px 40px;text-align:center;border-bottom:1px solid var(--border-muted-color);">
-    <h4 style="color:var(--brand-third-color);letter-spacing:0.3em;margin-bottom:12px;">GET IN TOUCH</h4>
+  <div class="page-hero-banner">
+    <h4>GET IN TOUCH</h4>
     <h1>Contact Us</h1>
-    <p style="max-width:480px;margin:12px auto 0;">We'd love to hear from you. Whether it's a question about an order, a styling query, or just a hello — our team is here.</p>
+    <p>We'd love to hear from you. Whether it's a question about an order, a styling query, or just a hello — our team is here.</p>
   </div>
 
   <main class="page">
 
-    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+    <div class="split-layout-wide">
 
       <!-- CONTACT FORM -->
-      <div style="flex:1.4;min-width:280px;">
-        <div class="form-container" style="margin:0;max-width:100%;">
-          <h3 style="margin-bottom:24px;">Send a Message</h3>
+      <div class="form-col">
+        <div class="form-container form-container-flush">
+          <h3 class="form-section-title">Send a Message</h3>
           <form id="contact-form" onsubmit="handleContact(event)">
-            <div style="display:flex;gap:14px;flex-wrap:wrap;">
-              <div style="flex:1;min-width:140px;">
+            <div class="form-row">
+              <div class="form-row-col">
                 <label for="c-fname">First Name</label>
                 <input type="text" id="c-fname" placeholder="Iqra" required />
               </div>
-              <div style="flex:1;min-width:140px;">
+              <div class="form-row-col">
                 <label for="c-lname">Last Name</label>
                 <input type="text" id="c-lname" placeholder="Ahmed" required />
               </div>
@@ -76,49 +76,49 @@
               <label for="c-message">Your Message</label>
               <textarea id="c-message" placeholder="Tell us how we can help…" rows="5" required></textarea>
             </div>
-            <button type="submit" style="width:100%;" class="lg-button">Send Message →</button>
+            <button type="submit" class="lg-button btn-full">Send Message →</button>
           </form>
         </div>
       </div>
 
       <!-- CONTACT INFO CARDS -->
-      <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:20px;padding-top:4px;">
+      <div class="info-cards-col">
 
-        <div class="card" style="width:100%;">
-          <div style="padding:24px;gap:10px;">
+        <div class="card card-full">
+          <div class="card-inner-pad">
             <h3>📍 Visit Us</h3>
             <p>LUXE Flagship Store<br />
                45-B, Zamzama Boulevard<br />
                Phase 5, DHA, Karachi, Pakistan</p>
-            <p style="font-size:0.8rem;color:var(--text-muted-color);">Mon – Sat: 10am – 9pm<br />Sunday: 12pm – 7pm</p>
+            <p class="text-muted-sm">Mon – Sat: 10am – 9pm<br />Sunday: 12pm – 7pm</p>
           </div>
         </div>
 
-        <div class="card" style="width:100%;">
-          <div style="padding:24px;gap:10px;">
+        <div class="card card-full">
+          <div class="card-inner-pad">
             <h3>📞 Call Us</h3>
-            <p><a href="tel:+922135740000" style="color:var(--brand-third-color);font-weight:600;">+92 21 3574 0000</a></p>
-            <p style="font-size:0.8rem;color:var(--text-muted-color);">Available Mon–Sat, 9am – 8pm</p>
+            <p><a href="tel:+922135740000" class="text-gold-link">+92 21 3574 0000</a></p>
+            <p class="text-muted-sm">Available Mon–Sat, 9am – 8pm</p>
           </div>
         </div>
 
-        <div class="card" style="width:100%;">
-          <div style="padding:24px;gap:10px;">
+        <div class="card card-full">
+          <div class="card-inner-pad">
             <h3>✉ Email Us</h3>
-            <p><a href="mailto:hello@luxe.pk" style="color:var(--brand-third-color);font-weight:600;">hello@luxe.pk</a></p>
-            <p><a href="mailto:support@luxe.pk" style="color:var(--text-muted-color);">support@luxe.pk</a></p>
-            <p style="font-size:0.8rem;color:var(--text-muted-color);">We respond within 24 hours.</p>
+            <p><a href="mailto:hello@luxe.pk" class="text-gold-link">hello@luxe.pk</a></p>
+            <p><a href="mailto:support@luxe.pk" class="text-muted-link">support@luxe.pk</a></p>
+            <p class="text-muted-sm">We respond within 24 hours.</p>
           </div>
         </div>
 
-        <div class="card" style="width:100%;">
-          <div style="padding:24px;gap:10px;">
+        <div class="card card-full">
+          <div class="card-inner-pad">
             <h3>🔗 Follow LUXE</h3>
-            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
-              <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;color:var(--text-primary-color);border-bottom:1px solid var(--border-primary-color);padding-bottom:1px;">Instagram</a>
-              <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;color:var(--text-primary-color);border-bottom:1px solid var(--border-primary-color);padding-bottom:1px;">Facebook</a>
-              <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;color:var(--text-primary-color);border-bottom:1px solid var(--border-primary-color);padding-bottom:1px;">Pinterest</a>
-              <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;color:var(--text-primary-color);border-bottom:1px solid var(--border-primary-color);padding-bottom:1px;">TikTok</a>
+            <div class="social-links">
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Pinterest</a>
+              <a href="#" class="social-link">TikTok</a>
             </div>
           </div>
         </div>
@@ -127,48 +127,44 @@
     </div>
 
     <!-- FAQ STRIP -->
-    <div class="section-header" style="margin-top:64px;">
+    <div class="section-header section-header-mt">
       <div><h4>Common Questions</h4><h2>FAQ</h2></div>
     </div>
 
-    <div style="display:flex;flex-direction:column;gap:12px;" id="faq-list">
+    <div class="faq-list" id="faq-list">
 
-      <div style="border:1px solid var(--border-muted-color);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="border-button" onclick="toggleFaq(this)"
-                style="width:100%;text-align:left;justify-content:space-between;border:none;border-radius:0;padding:18px 20px;background:var(--bg-card);">
+      <div class="faq-item">
+        <button class="border-button faq-btn" onclick="toggleFaq(this)">
           <span>How long does delivery take?</span> <span>+</span>
         </button>
-        <div class="faq-body" style="display:none;padding:0 20px 18px;background:var(--bg-card);">
+        <div class="faq-body">
           <p>Standard delivery takes 2–4 business days nationwide. Express next-day delivery is available for Karachi, Lahore, and Islamabad.</p>
         </div>
       </div>
 
-      <div style="border:1px solid var(--border-muted-color);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="border-button" onclick="toggleFaq(this)"
-                style="width:100%;text-align:left;justify-content:space-between;border:none;border-radius:0;padding:18px 20px;background:var(--bg-card);">
+      <div class="faq-item">
+        <button class="border-button faq-btn" onclick="toggleFaq(this)">
           <span>What is your return policy?</span> <span>+</span>
         </button>
-        <div class="faq-body" style="display:none;padding:0 20px 18px;background:var(--bg-card);">
+        <div class="faq-body">
           <p>We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original packaging. Refunds are processed within 5–7 business days.</p>
         </div>
       </div>
 
-      <div style="border:1px solid var(--border-muted-color);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="border-button" onclick="toggleFaq(this)"
-                style="width:100%;text-align:left;justify-content:space-between;border:none;border-radius:0;padding:18px 20px;background:var(--bg-card);">
+      <div class="faq-item">
+        <button class="border-button faq-btn" onclick="toggleFaq(this)">
           <span>Do you ship internationally?</span> <span>+</span>
         </button>
-        <div class="faq-body" style="display:none;padding:0 20px 18px;background:var(--bg-card);">
+        <div class="faq-body">
           <p>Currently we ship to Pakistan only. International shipping to UAE, UK and USA is coming in Q3 2026. Sign up to our newsletter to be notified.</p>
         </div>
       </div>
 
-      <div style="border:1px solid var(--border-muted-color);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="border-button" onclick="toggleFaq(this)"
-                style="width:100%;text-align:left;justify-content:space-between;border:none;border-radius:0;padding:18px 20px;background:var(--bg-card);">
+      <div class="faq-item">
+        <button class="border-button faq-btn" onclick="toggleFaq(this)">
           <span>How do I find my size?</span> <span>+</span>
         </button>
-        <div class="faq-body" style="display:none;padding:0 20px 18px;background:var(--bg-card);">
+        <div class="faq-body">
           <p>Each product page includes a detailed size guide. Our pieces tend to run true to size. If you're between sizes, we recommend sizing up for an oversized fit or sizing down for a tailored look.</p>
         </div>
       </div>

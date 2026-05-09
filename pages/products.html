@@ -28,7 +28,7 @@
       </li>
       <li><a href="services.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="cart.html">🛍 Cart <span id="cart-count" style="display:none;background:var(--brand-third-color);color:#fff;font-size:0.6rem;font-weight:700;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;">0</span></a></li>
+      <li><a href="cart.html">🛍 Cart <span id="cart-count" class="cart-badge">0</span></a></li>
       <li><a href="login.html">Login</a></li>
       <li><button id="theme-toggle" class="sm-button border-button">☾ Dark</button></li>
     </ul>
@@ -37,15 +37,15 @@
   <main class="page">
 
     <!-- PAGE HEADER -->
-    <div style="margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid var(--border-muted-color);">
+    <div class="products-page-header">
       <h4>Browse</h4>
-      <h1 style="font-size:2.2rem;margin-top:4px;">All Products</h1>
+      <h1>All Products</h1>
     </div>
 
     <!-- FILTER BAR -->
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:36px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border-muted-color);border-radius:var(--radius-md);">
-      <div class="select-container" style="min-width:140px;">
-        <label for="filter-cat" style="font-size:0.68rem;margin-bottom:4px;display:block;">Category</label>
+    <div class="filter-panel">
+      <div class="select-container">
+        <label for="filter-cat" class="filter-label">Category</label>
         <select id="filter-cat" onchange="filterProducts()">
           <option value="">All</option>
           <option value="women">Women</option>
@@ -54,8 +54,8 @@
           <option value="sale">Sale</option>
         </select>
       </div>
-      <div class="select-container" style="min-width:140px;">
-        <label for="filter-sort" style="font-size:0.68rem;margin-bottom:4px;display:block;">Sort By</label>
+      <div class="select-container">
+        <label for="filter-sort" class="filter-label">Sort By</label>
         <select id="filter-sort" onchange="filterProducts()">
           <option value="featured">Featured</option>
           <option value="price-asc">Price: Low to High</option>
@@ -63,120 +63,120 @@
           <option value="newest">Newest First</option>
         </select>
       </div>
-      <div class="select-container" style="min-width:120px;">
-        <label for="filter-size" style="font-size:0.68rem;margin-bottom:4px;display:block;">Size</label>
+      <div class="select-container">
+        <label for="filter-size" class="filter-label">Size</label>
         <select id="filter-size">
           <option value="">All Sizes</option>
           <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
         </select>
       </div>
-      <div style="margin-left:auto;">
-        <span style="font-size:0.78rem;color:var(--text-muted-color);letter-spacing:0.06em;" id="product-count">Showing 8 products</span>
+      <div class="filter-count-wrap">
+        <span class="filter-count" id="product-count">Showing 8 products</span>
       </div>
     </div>
 
     <!-- PRODUCTS GRID -->
     <div class="card-container" id="products-grid">
 
-      <div class="card" style="width:240px;" data-cat="women" data-price="8500">
-        <img src="../sources/collection_women.png" alt="Linen Oversized Blazer" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="women" data-price="8500">
+        <img src="../sources/collection_women.png" alt="Linen Oversized Blazer" />
         <div>
           <h4>Women · New</h4>
-          <h3 style="font-size:0.9rem;">Linen Oversized Blazer</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 8,500</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Linen Oversized Blazer</h3>
+          <p class="product-price">PKR 8,500</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p1',name:'Linen Blazer',price:8500,size:'M'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="men" data-price="14200">
-        <img src="../sources/collection_men.png" alt="Wool Blend Overcoat" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="men" data-price="14200">
+        <img src="../sources/collection_men.png" alt="Wool Blend Overcoat" />
         <div>
           <h4>Men · New</h4>
-          <h3 style="font-size:0.9rem;">Wool Blend Overcoat</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 14,200</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Wool Blend Overcoat</h3>
+          <p class="product-price">PKR 14,200</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p2',name:'Wool Overcoat',price:14200,size:'L'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="women" data-price="11900">
-        <img src="../sources/hero_banner.png" alt="Silk Wrap Midi Dress" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="women" data-price="11900">
+        <img src="../sources/hero_banner.png" alt="Silk Wrap Midi Dress" />
         <div>
           <h4>Women</h4>
-          <h3 style="font-size:0.9rem;">Silk Wrap Midi Dress</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 11,900</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Silk Wrap Midi Dress</h3>
+          <p class="product-price">PKR 11,900</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p3',name:'Silk Dress',price:11900,size:'S'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="men" data-price="6800">
-        <img src="../sources/collection_men.png" alt="Slim Tapered Chinos" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="men" data-price="6800">
+        <img src="../sources/collection_men.png" alt="Slim Tapered Chinos" />
         <div>
           <h4>Men</h4>
-          <h3 style="font-size:0.9rem;">Slim Tapered Chinos</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 6,800</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Slim Tapered Chinos</h3>
+          <p class="product-price">PKR 6,800</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p4',name:'Slim Chinos',price:6800,size:'M'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="women" data-price="5200">
-        <img src="../sources/collection_women.png" alt="Cashmere Turtleneck" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="women" data-price="5200">
+        <img src="../sources/collection_women.png" alt="Cashmere Turtleneck" />
         <div>
           <h4>Women · Sale</h4>
-          <h3 style="font-size:0.9rem;">Cashmere Turtleneck</h3>
-          <p style="font-size:0.85rem;"><span style="text-decoration:line-through;color:var(--text-muted-color);">PKR 9,500</span> &nbsp;<strong style="color:var(--brand-third-color);">PKR 5,200</strong></p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Cashmere Turtleneck</h3>
+          <p><span class="price-original">PKR 9,500</span> &nbsp;<strong class="price-sale">PKR 5,200</strong></p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p5',name:'Cashmere Turtleneck',price:5200,size:'M'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="men" data-price="7400">
-        <img src="../sources/collection_men.png" alt="Oxford Button Shirt" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="men" data-price="7400">
+        <img src="../sources/collection_men.png" alt="Oxford Button Shirt" />
         <div>
           <h4>Men</h4>
-          <h3 style="font-size:0.9rem;">Oxford Button Shirt</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 7,400</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Oxford Button Shirt</h3>
+          <p class="product-price">PKR 7,400</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p6',name:'Oxford Shirt',price:7400,size:'M'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="women" data-price="4800">
-        <img src="../sources/hero_banner.png" alt="Linen Wide Trousers" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="women" data-price="4800">
+        <img src="../sources/hero_banner.png" alt="Linen Wide Trousers" />
         <div>
           <h4>Women · Sale</h4>
-          <h3 style="font-size:0.9rem;">Linen Wide Trousers</h3>
-          <p style="font-size:0.85rem;"><span style="text-decoration:line-through;color:var(--text-muted-color);">PKR 7,200</span> &nbsp;<strong style="color:var(--brand-third-color);">PKR 4,800</strong></p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Linen Wide Trousers</h3>
+          <p><span class="price-original">PKR 7,200</span> &nbsp;<strong class="price-sale">PKR 4,800</strong></p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p7',name:'Linen Trousers',price:4800,size:'S'})">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="card" style="width:240px;" data-cat="men" data-price="18500">
-        <img src="../sources/collection_men.png" alt="Leather Biker Jacket" style="height:300px;object-fit:cover;" />
+      <div class="card product-card" data-cat="men" data-price="18500">
+        <img src="../sources/collection_men.png" alt="Leather Biker Jacket" />
         <div>
           <h4>Men · New</h4>
-          <h3 style="font-size:0.9rem;">Leather Biker Jacket</h3>
-          <p style="font-size:0.85rem;font-weight:600;color:var(--text-primary-color);">PKR 18,500</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <a href="product-detail.html" class="link-button" style="font-size:0.68rem;">View</a>
+          <h3>Leather Biker Jacket</h3>
+          <p class="product-price">PKR 18,500</p>
+          <div class="product-card-actions">
+            <a href="product-detail.html" class="link-button link-btn-sm">View</a>
             <button class="tiny-button" onclick="addToCart({id:'p8',name:'Leather Jacket',price:18500,size:'L'})">Add to Cart</button>
           </div>
         </div>
@@ -185,7 +185,7 @@
     </div>
 
     <!-- LOAD MORE -->
-    <div style="display:flex;justify-content:center;margin-top:24px;">
+    <div class="load-more-wrap">
       <button class="border-button" onclick="showToast('Loading more products…')">Load More Products</button>
     </div>
 
